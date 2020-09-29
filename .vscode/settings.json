@@ -3,6 +3,7 @@
         "codelyzer",
         "devkit",
         "jasminewd",
+        "pibb",
         "tslib"
     ]
 }
