@@ -1,4 +1,1 @@
-- Added some git files.
-- Added necessary packages and libs.
-- Updated `README.md` file.
-- Structured the whole app.
+Finish the app.

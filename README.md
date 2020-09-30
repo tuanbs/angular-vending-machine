@@ -12,33 +12,29 @@ Open your browser with the address: `http://localhost:4200`.
 
 --------------------------------------------------
 
-# AngularVendingMachine
+# Angular Vending Machine.
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.4.
 
-## Development server
+## Requirements.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+As a vendor, I want this machine accepts coins:
+- It will accept coins only, no cash. Coins are represented by 4 buttons with different values `20c`, `50c`, `$1` and `$2`.
+- When coin is inserted by pressing the buttons, the value will be added to the available balance. The machine will display the current balance when users insert coins or dispense the item (pressing the item button).
 
-## Code scaffolding
+As a vendor, I want to see what the users can buy:
+- The machine shows a list of item buttons (4) with their prices, name and remaining inventory.
+- The list of items is stored in `db.json` file and returned to the app from `ItemRepoService`. This service users the local external API to return the list as well as dispense the item.
+- Users buy the item by pressing the item button.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Dispense the item:
+- When pressing the item button, the current balance will be deducted and the item's remaining stock reduced by 1 unit.
+- If the available balance is not enough to buy the item, it will show `Insufficient balance` message. Also, if the remaining stock is 0, it will show `No inventory remaining` message.
+- When item is dispensed, it will show the success message.
 
-## Build
+## Assumptions.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+The vendor will restock the remaining inventory by editing the `db.json` file.
 
 ## Git flow.
 

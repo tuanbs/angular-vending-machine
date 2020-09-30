@@ -3,12 +3,17 @@ import { CommonModule } from '@angular/common';
 
 import { HomeRoutingModule } from './home-routing.module';
 import { HomeComponent } from './home.component';
+import { InsertCoinComponent } from './insert-coin/insert-coin.component';
+import { ItemsComponent } from './items/items.component';
+import { SharedModule } from 'src/app/shared/shared.module';
 
 @NgModule({
-  declarations: [HomeComponent],
+  declarations: [HomeComponent, InsertCoinComponent, ItemsComponent,],
   imports: [
     CommonModule,
-    HomeRoutingModule
+    HomeRoutingModule,
+
+    SharedModule,
   ]
 })
 export class HomeModule { }

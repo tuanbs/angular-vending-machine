@@ -1,0 +1,11 @@
+<hr class="border border-primary">
+
+<p class="display-4">Select an item to dispense</p>
+
+<div class="d-flex justify-content-center bg-secondary mb-3">
+    <button type="button" *ngFor="let item of _items" class="btn btn-success m-3" (click)="onSelectItem(item)">
+        <span class="badge badge-light">{{item.cost | currency:'USD'}}</span> {{item.name}} <span class="badge badge-light">{{item.remaining}}</span>
+    </button>
+</div>
+
+<hr class="border border-primary">
